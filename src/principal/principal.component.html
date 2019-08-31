@@ -1,0 +1,74 @@
+
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+
+<body class="body">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6 valla" style="box-shadow:10px 0px 30px rgba(82, 63, 63, 0.7); z-index: 2;">
+            </div>
+            <div class="col-6 offset-6 espacio" >
+                <div class="row">
+                    <div class="col-9 offset-1 difuminado">
+                        <h2 style="align-self: center" *ngIf="!estadolog"> <img class="imagenbalon" src="https://image.flaticon.com/icons/png/128/33/33736.png" alt=""/>Login</h2>
+                        <h2 style="align-self: center" *ngIf="estadolog"> <img class="imagenbalon" src="https://image.flaticon.com/icons/png/128/33/33736.png" alt=""/>Registro</h2>
+                        <!-- para el login -->
+                        <label *ngIf="!estadolog">Correo electrónico</label><br>
+                        <div class="input-group mb-3" *ngIf="!estadolog">
+                            <input type="email" class="form-control" placeholder="Correo electrónico" [(ngModel)]="correologin">
+                        </div>
+                        <label *ngIf="!estadolog">Contraseña</label><br>
+                        <div class="input-group mb-3" *ngIf="!estadolog">
+                            <input type="password" class="form-control" placeholder="Contraseña" [(ngModel)]="passwordlogin">
+                        </div>
+                        <!-- para el REGISTRO -->
+                        <label *ngIf="estadolog">Nombre</label>
+                        <div class="input-group mb-3" *ngIf="estadolog">
+                                <input type="text" class="form-control" placeholder="Nombre" [(ngModel)]="nombre">
+                        </div>
+                        <div class="form-group" *ngIf="estadolog">
+                            <label for="Facultad">Facultad</label>
+                            <select class="form-control" id="Facultad" placeholder="¿De qué facultad eres?" [(ngModel)]="facultad">
+                                <option>Ciencias de la Salud</option>
+                                <option>Ciencias Contables Económicas y Administrativas</option>
+                                <option>Ingeniería Electrónica y Telecomunicaciones</option>
+                                <option>Ciencias Naturales, Exactas y de la Educación</option>
+                                <option>Ciencias Agrarias</option>
+                                <option>Derecho y Ciencias Políticas</option>
+                                <option>Ciencias Humanas y Sociales</option>
+                            </select>
+                        </div>
+                        <label *ngIf="estadolog">Correo electrónico</label>
+                        <div class="input-group mb-3" *ngIf="estadolog">    
+                            <input type="email" class="form-control" placeholder="Correo electrónico" [(ngModel)]="correoregister">
+                        </div>
+                        <label *ngIf="estadolog">Contraseña</label><br>
+                        <div class="input-group mb-3" *ngIf="estadolog">
+                            <input type="password" class="form-control" placeholder="Contraseña" [(ngModel)]="passwordregister">
+                        </div>
+                        <div class="form-group" *ngIf="estadolog">
+                            <label for="Rol">Rol</label>
+                            <select class="form-control" id="Rol" placeholder="Soy..." [(ngModel)]="rol">
+                                <option>Administrador</option>
+                                <option>Entrenador</option>                                    
+                            </select>
+                        </div>
+                        <button type="button" class="btn btn-primary" *ngIf="!estadolog" (click)="login()">Ingresar</button> 
+                        <button type="button" class="btn btn-info" *ngIf="estadolog"(click)="register()">Registrarse</button>  
+                        <br> 
+                        <label style="margin-right: 5px" *ngIf="!estadolog">Aún no tienes una cuenta?</label> <button type="button" class="btn btn-link" *ngIf="!estadolog" (click)="changeLog()">Regístrate</button>
+                        <label style="margin-right: 5px" *ngIf="estadolog">Ya tienes una cuenta?</label> <button type="button" class="btn btn-link" *ngIf="estadolog" (click)="changeLog()">Ingresa</button>
+                        <div><label> Eres un visitante? Haz click <a routerLinkActive="active" routerLink="/resultados">aquí.</a></label></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

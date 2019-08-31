@@ -1,0 +1,42 @@
+.valla{
+    background: url("https://tv.orange.es/UpImages/3457/orangetvfutbolx_5a85dbcdc3975659590006c0d.jpg") ;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+    position: absolute;
+}
+
+
+.espacio{
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color:rgba(249, 244, 244, 1);
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    z-index:1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+.difuminado{
+    background-color: rgba(33,33,33,0.1);
+    border-radius: 10px;
+    border-color: white;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-right:10px;
+    padding-left:10px;
+}
+
+.imagenbalon{
+    width: 50px;
+    height: auto;
+    margin-right: 20px;
+}
